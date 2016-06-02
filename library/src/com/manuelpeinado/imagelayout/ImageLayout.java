@@ -163,6 +163,19 @@ public class ImageLayout extends ViewGroup {
         rebuildFitter();
     }
 
+    /**
+     * Changes the background image and its layout dimensions using Bitmap.
+     */
+    public void setImageResourceBitmap(Bitmap imageResource, int imageWidth, int imageHeight) {
+        bitmap = imageResource;
+        bitmapSrcRect = bitmapRect(imageResource);
+
+        this.imageWidth = imageWidth;
+        this.imageHeight = imageHeight;
+
+        rebuildFitter();
+    }
+
     private static Bitmap extractBitmapFromDrawable(Drawable drawable) {
         return ((BitmapDrawable) drawable).getBitmap();
     }
